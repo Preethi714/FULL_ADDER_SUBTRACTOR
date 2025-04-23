@@ -1,5 +1,8 @@
 # FULL_ADDER_SUBTRACTOR
-
+```
+Developed by:Preethi.K
+RegisterNumber: 212224240118
+```
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
 
 **AIM:**
@@ -38,18 +41,60 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
+![Screenshot 2025-04-23 160218](https://github.com/user-attachments/assets/d5054afc-294f-4ffc-8ef8-325296f687d4)
+![Screenshot 2025-04-23 160227](https://github.com/user-attachments/assets/1acb3624-5724-4eb4-b7d3-a82098790cfe)
+
+
 **Procedure**
-
-Write the detailed procedure here
-
+```
+  1.Type the program in Quartus software.
+  2.Compile and run the program.
+  3.Generate the RTL schematic and save the logic diagram.
+  4.Create nodes for inputs and outputs to generate the timing diagram.
+  5.For different input combinations generate the timing diagram.
+```
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+```
+FULL ADDER
+
+module FH(a,b,c,sum, carry);
+input a,b,c;
+output sum, carry;
+wire w1,w2,w3;
+assign sum=a^b^c;
+assign w1=a&b;
+assign w2=b&c;
+assign w3=c&a;
+assign carry=w1|w2|w3;
+endmodule;
+
+FULL SUBTRACTOR
+
+module FH(difference, borrow, a, b, bin);
+input a,b,bin;
+output differencef,borrow;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=(~a&b);
+assign w3=(~w1&bin);
+assign difference=w1^bin;
+assign borrow=w2|w3;
+endmodule;
+```
 
 **RTL Schematic**
 
+![Screenshot 2025-04-23 160301](https://github.com/user-attachments/assets/b0b5e839-e6b0-44a1-8f3f-224db42f58be)
+![Screenshot 2025-04-23 160312](https://github.com/user-attachments/assets/e0d765d8-491b-4a1a-be19-0f74ad695f31)
+
+
 **Output Timing Waveform**
+
+![Screenshot 2025-04-23 160325](https://github.com/user-attachments/assets/c4236975-3990-4877-98e4-4c73ac9175c3)
+![Screenshot 2025-04-23 160338](https://github.com/user-attachments/assets/1e8b38ff-b0f2-4ae7-8feb-c84cd9261ae3)
+
 
 **Result:**
 
